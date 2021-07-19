@@ -1,0 +1,81 @@
+html {
+    box-sizing: border-box;
+    background:url('https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') center no-repeat;
+    background-size:cover;
+    min-height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Futura,"Trebuchet MS",Arial,sans-serif
+  }
+  *, *:before, *:after {box-sizing: inherit; }
+
+  svg {
+    fill:white;
+    background: rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 50%;
+    width:200px;
+    margin-bottom: 50px;
+  }
+
+  #sampletable {
+    padding: 20px;
+    max-width: 350px;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+
+  }
+
+  h2 {
+    text-align: center;
+    margin: 0;
+    font-weight: 200;
+  }
+
+  .ourDishes {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    list-style: none;
+  }
+
+  .ourDishes li {
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding: 10px 0;
+    font-weight: 100;
+    display: flex;
+  }
+
+  .ourDishes label {
+    flex:1;
+    cursor: pointer;
+
+  }
+
+  .ourDishes input {
+    display: none;
+  }
+
+  .ourDishes input + label:before {
+    content: '🍲';
+    margin-right: 10px;
+  }
+
+  .ourDishes input:checked + label:before {
+    content: '🧺'; 
+  }
+
+  /* .add-it {
+    margin-top: 20px;
+  } */
+
+  .addDish input {
+    padding:10px;
+    outline:0;
+    border:1px solid rgba(0,0,0,0.1);
+  }
+
+
