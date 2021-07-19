@@ -9,7 +9,7 @@ html {
     text-align: center;
     font-family: Futura,"Trebuchet MS",Arial,sans-serif
   }
-  *, *:before, *:after {box-sizing: inherit; }
+  *, *:before, *:after {box-sizing: inherit;}
 
   svg {
     fill:white;
