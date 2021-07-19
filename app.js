@@ -1,6 +1,6 @@
 const addDishes = document.querySelector('.addedDish');
 const savedDishes = document.querySelector('.ourDishes');
-const dishes  = JSON.parse(localStorage.getItem('dish')) || [];
+const dishes  = JSON.parse(localStorage.getItem('dishes')) || [];
 
 function addDish(e){
     e.preventDefault();
@@ -36,12 +36,13 @@ function toggleDone(e){
     const el = e.target;
     const index = el.dataset.index;
     dishes[index].done = !dishes[index].done;
-    populateDish(dishes, savedDishes);
     localStorage.setItem('dishes', JSON.stringify(dishes));
+    populateDish(dishes, savedDishes);
   }
 
 
 
   addDishes.addEventListener('submit', addDish);
   savedDishes.addEventListener('click', toggleDone);
+console.log(localStorage.getItem("dishes"));
   populateDish(dishes, savedDishes);
