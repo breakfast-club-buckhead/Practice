@@ -52,8 +52,9 @@ html {
   .ourDishes label {
     flex:1;
     cursor: pointer;
-
   }
+
+label {}
 
   .ourDishes input {
     display: none;
@@ -68,9 +69,12 @@ html {
     content: '🧺'; 
   }
 
-  /* .add-it {
-    margin-top: 20px;
+  
+  /* Add strikethrough feature for line item  */
+  /* .ourDishes li input:checked #text {
+    text-decoration: line-through;
   } */
+ 
 
   .addDish input {
     padding:10px;

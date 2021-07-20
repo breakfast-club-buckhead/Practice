@@ -16,7 +16,16 @@ function addDish(e){
 
 function deleteDish(e){
   e.preventDefault();
- console.log("0");
+  // console.log("0");
+  const el = e.target;
+  const index = el.dataset.index;
+  if(dishes[index].done = !dishes[index].done){
+    console.log(dishes, index);
+    dishes.splice(index, 1)
+    console.log(dishes);
+    //console.log(localStorage.dishes);
+  };
+  populateDish(dishes, savedDishes);
   //find index of dish && splice(index, 1) || ensure index != -1
   // set items dishes in local storage
   // onClick of pot, strike through and change style to italic && bold
