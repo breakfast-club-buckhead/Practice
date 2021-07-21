@@ -27,6 +27,12 @@ function deleteDish(e){
   populateDish(dishes, savedDishes);
 }
 
+//Edit dish name
+function editDish(){
+  // <br/>
+  // <button data-index${i} class="edit">✍🏾</button>
+}
+
 //show dishes added ~> Looped over
 function populateDish(writtenDishes = [], displayedDishes){
     displayedDishes.innerHTML = writtenDishes.map((dish, i) => {
@@ -51,15 +57,16 @@ function toggleDone(e){
 
   }
 
-// create a clickHandler what handles click on 
+// create a clickHandler what handles click on item
 function clickHandler(e){
   if(e.target.matches('label')){
     return toggleDone.call(this,e);
-  }else if(e.target.matches('button')){
+  }else if(e.target.matches('.delete')){
    return deleteDish.call(this, e);
   }
 }
 
+//
 
 addDishes.addEventListener('submit', addDish);
 savedDishes.addEventListener('click', clickHandler);
