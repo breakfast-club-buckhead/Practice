@@ -2,6 +2,8 @@ const addDishes = document.querySelector('.addedDish');
 const savedDishes = document.querySelector('.ourDishes');
 const dishes  = JSON.parse(localStorage.getItem('dishes')) || [];
 
+
+//Add a dish
 function addDish(e){
     e.preventDefault();
     const dishText  = (this.querySelector('[name=dish]')).value;
@@ -14,24 +16,18 @@ function addDish(e){
     this.reset();
 }
 
+//Remove a dish
 function deleteDish(e){
   e.preventDefault();
-  // console.log("0");
   const el = e.target;
   const index = el.dataset.index;
   if(dishes[index].done = !dishes[index].done){
-    console.log(dishes, index);
     dishes.splice(index, 1)
-    console.log(dishes);
-    //console.log(localStorage.dishes);
   };
   populateDish(dishes, savedDishes);
-  //find index of dish && splice(index, 1) || ensure index != -1
-  // set items dishes in local storage
-  // onClick of pot, strike through and change style to italic && bold
-  // remove from localstorage
 }
 
+//show dishes added ~> Looped over
 function populateDish(writtenDishes = [], displayedDishes){
     displayedDishes.innerHTML = writtenDishes.map((dish, i) => {
         return `
@@ -44,9 +40,9 @@ function populateDish(writtenDishes = [], displayedDishes){
       }).join('');
 }
 
+// Toggles to show the dish done
 function toggleDone(e){ 
     if(!e.target.matches('input')) return;
-    console.log("1");
     const el = e.target;
     const index = el.dataset.index;
     dishes[index].done = !dishes[index].done;
@@ -55,8 +51,8 @@ function toggleDone(e){
 
   }
 
+// create a clickHandler what handles click on 
 function clickHandler(e){
-
   if(e.target.matches('label')){
     return toggleDone.call(this,e);
   }else if(e.target.matches('button')){
@@ -67,5 +63,4 @@ function clickHandler(e){
 
 addDishes.addEventListener('submit', addDish);
 savedDishes.addEventListener('click', clickHandler);
-// console.log(localStorage.getItem("dishes"));
 populateDish(dishes, savedDishes);

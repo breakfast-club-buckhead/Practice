@@ -1,13 +1,14 @@
 html {
     box-sizing: border-box;
-    background:url('https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') center no-repeat;
+    background:url('https://images.pexels.com/photos/326279/pexels-photo-326279.jpeg?cs=srgb&dl=pexels-pixabay-326279.jpg&fm=jpg') center no-repeat;
     background-size:cover;
     min-height:100vh;
     display:flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family: Futura,"Trebuchet MS",Arial,sans-serif
+    font-family: Futura,"Trebuchet MS",Arial,sans-serif;
+    font-size: large;
   }
   *, *:before, *:after {box-sizing: inherit;}
 
@@ -53,8 +54,6 @@ html {
     flex:1;
     cursor: pointer;
   }
-
-label {}
 
   .ourDishes input {
     display: none;
