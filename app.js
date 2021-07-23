@@ -1,13 +1,16 @@
 const addDishes = document.querySelector('.addedDish');
 const savedDishes = document.querySelector('.ourDishes');
 const dishes  = JSON.parse(localStorage.getItem('dishes')) || [];
+const searchDish = document.querySelector('.search');
 
 
 //Add a dish
 function addDish(e){
     e.preventDefault();
     const dishText  = (this.querySelector('[name=dish]')).value;
+    const dishIngredientText = (this.querySelector('[name=dish_ingredient]')).value;
     const dish = { dishText, 
+                   dishIngredientText,
                     done: false
                 };
     dishes.push(dish);
@@ -27,11 +30,12 @@ function deleteDish(e){
   populateDish(dishes, savedDishes);
 }
 
-//Edit dish name
+//Edit dish name && ingredients
 function editDish(){
   // <br/>
   // <button data-index${i} class="edit">✍🏾</button>
 }
+
 
 //show dishes added ~> Looped over
 function populateDish(writtenDishes = [], displayedDishes){
@@ -39,7 +43,7 @@ function populateDish(writtenDishes = [], displayedDishes){
         return `
           <li>
             <input type="checkbox" data-index=${i} id="item${i}" ${dish.done ? 'checked' : ''} />
-            <label for="item${i}">${dish.dishText}</label>
+            <label for="item${i}">${dish.dishText} => ingredients: ${dish.dishIngredientText}</label>
             <button data-index=${i} class="delete">🗑️</button>
           </li>
         `;
@@ -57,6 +61,20 @@ function toggleDone(e){
 
   }
 
+function findMeals() {
+  // store meals already created
+  const storedMeal = dishes;
+  // convert input to array && lowerCased
+  // other implementation
+  const searchVal = [oil, flour]
+  // declare result variable ... an array
+  // dishes.forEach(dish => {
+  //   if(dish.dishIngredientText.)
+  // });
+  // for eachIngredient given, search each dishes ingredients and push dishText to result variable if true
+  // remove duplicates from results, convert to string and return
+}
+
 // create a clickHandler what handles click on item
 function clickHandler(e){
   if(e.target.matches('label')){
@@ -66,7 +84,6 @@ function clickHandler(e){
   }
 }
 
-//
 
 addDishes.addEventListener('submit', addDish);
 savedDishes.addEventListener('click', clickHandler);
