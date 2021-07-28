@@ -16,12 +16,11 @@ function addDish(e){
 }
 
 function deleteDish(e){
-
+   
 }
 
 function populateDish(writtenDishes = [], displayedDishes){
     displayedDishes.innerHTML = writtenDishes.map((dish, i) => {
-        console.log(dish,dish.dishText.value, i);
         return `
           <li>
             <input type="checkbox" data-index=${i} id="item${i}" ${dish.done ? 'checked' : ''} />
